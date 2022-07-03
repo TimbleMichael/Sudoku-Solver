@@ -5,20 +5,25 @@ grid = [[5,3,0,0,7,0,0,0,0],
         [0,9,8,0,0,0,0,6,0],
         [8,0,0,0,6,0,0,0,3],
         [4,0,0,8,0,3,0,0,1],
-        [7,0,0,0,2,0,0,0,6],
+        [7,0,0,0,2,0,0,0,7],
         [0,6,0,0,0,0,2,8,0],
         [0,0,0,4,1,9,0,0,5],
-        [0,0,0,0,8,0,0,1,0]]
+        [0,0,0,0,8,0,0,0,0]]
 
+## Function for printing the grid in the sudoku format for easy reading
 def printGrid(board):
+
+    # This FOR loop, loops through each ROW that satisifies the conditions (i != 0 and i%3 = 0)
+    # Then prints the line after the THIRD and SIXTH line, as when you i=3/3 and i=6/3, has 0-remainder. 
     for i in range(len(board)):
         if i%3 == 0 and i != 0:
             print("- - - - - - - - - - - -")
-    
-        for j in range(len(board[0])):
+
+        # This FOR loop, is used to create 
+        for j in range(len(board)):
             if j%3 == 0 and j != 0:
                 print(" | ",end="")
-
+            
             if j == 8:
                 print(board[i][j])
             else:
@@ -61,4 +66,10 @@ def solve():
     
 
 solve()
+   
+       
+
+
+
+
 
